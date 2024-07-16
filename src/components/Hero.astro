@@ -1,0 +1,49 @@
+---
+import Image from "astro/components/Image.astro";
+import ContactButton from "./ContactButton.astro";
+import googleSearch from "../images/logos/google-search.png";
+import partner from "../images/logos/partner.png";
+import heroImg from "../images/heroimg.png";
+---
+
+<section
+  class="w-full max-w-7xl grid grid-cols-1 gap-10 px-4 py-10 md:grid-cols-2 lg:gap-12 lg:py-0 lg:pb-10 lg:pt-20"
+>
+  <article class="flex flex-col gap-6">
+    <h1 class="uppercase text-5xl font-[poppins-bold]">
+      Your <span
+        class="text-transparent bg-gradient-to-br from-violet-800 to-violet-500 bg-clip-text"
+        >partner</span
+      > marketing success
+    </h1>
+    <ContactButton />
+    <p class="text-zinc-400">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. In quaerat culpa
+      deserunt, debitis quis nisi, voluptatum quo, laborum iusto cum nobis sed
+      aperiam ducimus non doloribus nostrum corporis.
+    </p>
+    <div class="w-full flex justify-start items-center gap-5">
+      <div class="w-20">
+        <Image
+          src={googleSearch}
+          alt="Logo de certificación de Google Search"
+          width="500"
+          height="500"
+          class="grayscale"
+        />
+      </div>
+      <div class="w-20">
+        <Image
+          src={partner}
+          alt="Logo de partner de Google"
+          width="488"
+          height="488"
+          class="grayscale"
+        />
+      </div>
+    </div>
+  </article>
+  <article class="w-full grid place-content-end">
+    <Image src={heroImg} width="525" height="512" alt="Hero Image" />
+  </article>
+</section>

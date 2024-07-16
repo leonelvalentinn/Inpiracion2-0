@@ -1,0 +1,97 @@
+---
+import Image from "astro/components/Image.astro";
+import Logo from "../images/logos/logo.png";
+import ContactButton from "./ContactButton.astro";
+---
+
+<header class="w-full max-w-7xl flex justify-center items-center p-4">
+  <nav class="w-full flex justify-between items-center">
+    <a class="w-40" href="/">
+      <Image
+        src={Logo}
+        width="442"
+        height="145"
+        alt="Logo de Inspiración Creativa"
+      />
+    </a>
+    <div class="hidden lg:flex">
+      <ul class="flex justify-center items-center gap-10">
+        <li>
+          <a class="transition hover:text-violet-600" href="#about">Nosotros</a>
+        </li>
+        <li>
+          <a class="transition hover:text-violet-600" href="#services"
+            >Servicios</a
+          >
+        </li>
+        <li>
+          <a class="transition hover:text-violet-600" href="#clients"
+            >Clientes</a
+          >
+        </li>
+        <li>
+          <a class="transition hover:text-violet-600" href="#reviews"
+            >Testimonios</a
+          >
+        </li>
+      </ul>
+    </div>
+    <ContactButton classList="hidden lg:block" />
+    <button
+      aria-label="Abrir menu"
+      class="grid place-content-center gap-2 lg:hidden"
+      id="btn-menu"
+    >
+      <div class="w-8 h-1 rounded-md bg-white transition"></div>
+      <div class="w-8 h-1 rounded-md bg-white transition"></div>
+      <div class="w-8 h-1 rounded-md bg-white transition"></div>
+    </button>
+  </nav>
+</header>
+
+<div
+  class="w-full fixed h-[calc(100svh-80px)] top-[80px] flex justify-center items-center flex-col bg-gray-900/95 opacity-0 -right-full transition"
+  id="container-menu"
+>
+  <div class="">
+    <ul>
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#clients">Clientes</a></li>
+      <li><a href="#reviews">Testimonios</a></li>
+    </ul>
+  </div>
+  <ContactButton />
+</div>
+
+<style>
+  .btn-menu-open div:nth-last-child(2) {
+    opacity: 0;
+  }
+  .btn-menu-open div:nth-child(1) {
+    transform: rotate(45deg) translateY(10px) translateX(5px);
+  }
+  .btn-menu-open div:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12px) translateX(6px);
+  }
+</style>
+
+<script>
+  const btnMenu = document.getElementById("btn-menu");
+  const containerMenu = document.getElementById("container-menu");
+
+  btnMenu?.addEventListener("click", () => {
+    btnMenu.classList.toggle("btn-menu-open");
+    if (containerMenu?.classList.contains("opacity-100")) {
+      containerMenu.classList.remove("opacity-100");
+      containerMenu.classList.remove("right-0");
+      containerMenu.classList.add("opacity-0");
+      containerMenu.classList.add("-right-full");
+    } else if (containerMenu) {
+      containerMenu.classList.remove("opacity-0");
+      containerMenu.classList.remove("-right-full");
+      containerMenu.classList.add("opacity-100");
+      containerMenu.classList.add("right-0");
+    }
+  });
+</script>

@@ -1,0 +1,98 @@
+---
+import Image from "astro/components/Image.astro";
+import avatar from "../images/avatar-02.png";
+import ArrowRight from "./Icons/ArrowRight.astro";
+import Team from "./Icons/Team.astro";
+---
+
+<div
+  class="px-4 w-full flex items-center justify-end flex-col gap-3 xxs:flex-row"
+>
+  <span class="font-semibold">Nuestro Equipo</span>
+  <div class="flex">
+    <Image
+      src={avatar}
+      width="494"
+      height="494"
+      alt="Fotografía del equipo"
+      class="border-2 border-white rounded-full w-10"
+    />
+    <Image
+      src={avatar}
+      width="494"
+      height="494"
+      alt="Fotografía del equipo"
+      class="border-2 border-white rounded-full w-10 -translate-x-[10px]"
+    />
+    <Image
+      src={avatar}
+      width="494"
+      height="494"
+      alt="Fotografía del equipo"
+      class="border-2 border-white rounded-full w-10 -translate-x-5"
+    />
+    <Image
+      src={avatar}
+      width="494"
+      height="494"
+      alt="Fotografía del equipo"
+      class="border-2 border-white rounded-full w-10 -translate-x-[30px]"
+    />
+    <button
+      class="border-2 border-white rounded-full w-10 grid place-content-center -translate-x-5 group"
+    >
+      <ArrowRight class="w-5 rotate-45 transition group-hover:rotate-90" />
+    </button>
+  </div>
+</div>
+<section class="w-full max-w-7xl px-4 my-10">
+  <div class="bg-image bg-cover bg-center rounded-2xl">
+    <div class="bg-[#13151a]/50">
+      <div
+        class="flex flex-col gap-4 p-4 lg:flex-row lg:p-0 lg:px-6 lg:pb-6 lg:pt-52"
+      >
+        <div class="flex flex-col gap-4 justify-center">
+          <span
+            class="bg-violet-500 rounded-full px-3 py-2 inline-block w-max h-max"
+            >¿Por qué elegirnos?</span
+          >
+          <h2
+            class="uppercase font-semibold text-xl px-4 py-3 rounded-2xl text-[#13151a] bg-white inline-block w-max h-max lg:text-2xl"
+          >
+            Nuestras Ventajas
+          </h2>
+        </div>
+        <article
+          class="p-4 flex items-start gap-4 rounded-2xl bg-white text-gray-900"
+        >
+          <Team class="w-10 min-w-10" />
+          <span class="grid gap-5">
+            <h3 class="font-semibold">Equipo Experto</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+              voluptatem inventore architecto assumenda reprehenderit
+            </p>
+          </span>
+        </article>
+        <article
+          class="p-4 flex items-start gap-4 rounded-2xl bg-white text-gray-900"
+        >
+          <Team class="w-10 min-w-10" />
+          <span class="grid gap-5">
+            <h3 class="font-semibold">Equipo Experto</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+              voluptatem inventore architecto assumenda reprehenderit
+            </p>
+          </span>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-image {
+    background-image: url(../images/background.jpg);
+  }
+</style>
