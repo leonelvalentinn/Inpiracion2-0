@@ -30,6 +30,7 @@ import heroImg from "../images/heroimg.png";
           width="500"
           height="500"
           class="grayscale"
+          loading="eager"
         />
       </div>
       <div class="w-20">
@@ -39,11 +40,18 @@ import heroImg from "../images/heroimg.png";
           width="488"
           height="488"
           class="grayscale"
+          loading="eager"
         />
       </div>
     </div>
   </article>
   <article class="w-full grid place-content-end">
-    <Image src={heroImg} width="525" height="512" alt="Hero Image" />
+    <Image
+      src={heroImg}
+      width="525"
+      height="512"
+      alt="Hero Image"
+      loading="eager"
+    />
   </article>
 </section>

@@ -1,5 +1,39 @@
 ---
 import Image from "astro/components/Image.astro";
+import Question from "./Question.astro";
+
+const faqs = [
+  {
+    question: "¿Qué servicios ofrecemos?",
+    answer:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+  },
+  {
+    question: "¿Qué servicios ofrecemos?",
+    answer:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+  },
+  {
+    question: "¿Qué servicios ofrecemos?",
+    answer:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+  },
+  {
+    question: "¿Qué servicios ofrecemos?",
+    answer:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+  },
+  {
+    question: "¿Qué servicios ofrecemos?",
+    answer:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+  },
+  {
+    question: "¿Qué servicios ofrecemos?",
+    answer:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+  },
+];
 ---
 
 <section
@@ -11,7 +45,12 @@ import Image from "astro/components/Image.astro";
   >
   <h3 class="text-xl uppercase mb-4 lg:text-3xl">Preguntas frecuentes</h3>
   <div
-    class="w-full max-w-5xl flex flex-wrap gap-7 justify-center items-center mt-10 lg:gap-12"
+    class="w-full max-w-2xl flex flex-wrap gap-4 justify-center items-center mt-10"
   >
+    {
+      faqs.map((faq) => (
+        <Question question={faq.question} answer={faq.answer} />
+      ))
+    }
   </div>
 </section>

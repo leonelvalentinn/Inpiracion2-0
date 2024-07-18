@@ -7,6 +7,7 @@ import Team from "./Icons/Team.astro";
 
 <div
   class="px-4 w-full flex items-center justify-end flex-col gap-3 xxs:flex-row"
+  id="about"
 >
   <span class="font-semibold">Nuestro Equipo</span>
   <div class="flex">
@@ -38,11 +39,13 @@ import Team from "./Icons/Team.astro";
       alt="Fotografía del equipo"
       class="border-2 border-white rounded-full w-10 -translate-x-[30px]"
     />
-    <button
+    <a
+      href="#team"
       class="border-2 border-white rounded-full w-10 grid place-content-center -translate-x-5 group"
+      aria-label="Ir a la sección de nuestro equipo"
     >
       <ArrowRight class="w-5 rotate-45 transition group-hover:rotate-90" />
-    </button>
+    </a>
   </div>
 </div>
 <section class="w-full max-w-7xl px-4 my-10">
@@ -53,7 +56,7 @@ import Team from "./Icons/Team.astro";
       >
         <div class="flex flex-col gap-4 justify-center">
           <span
-            class="bg-violet-500 rounded-full px-3 py-2 inline-block w-max h-max"
+            class="bg-violet-600 rounded-full px-3 py-2 inline-block w-max h-max"
             >¿Por qué elegirnos?</span
           >
           <h2

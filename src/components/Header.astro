@@ -50,18 +50,18 @@ import ContactButton from "./ContactButton.astro";
 </header>
 
 <div
-  class="w-full fixed h-[calc(100svh-80px)] top-[80px] flex justify-center items-center flex-col bg-gray-900/95 opacity-0 -right-full transition"
+  class="w-full fixed h-[calc(100svh-80px)] top-[80px] flex justify-center items-center flex-col bg-gray-900/95 opacity-0 -right-full transition z-10 data-[active]:opacity-100 data-[active]:right-0"
   id="container-menu"
 >
   <div class="">
-    <ul>
+    <ul class="grid gap-4" id="menu-overlay">
       <li><a href="#about">Nosotros</a></li>
       <li><a href="#services">Servicios</a></li>
       <li><a href="#clients">Clientes</a></li>
       <li><a href="#reviews">Testimonios</a></li>
     </ul>
   </div>
-  <ContactButton />
+  <ContactButton classList="mt-6" />
 </div>
 
 <style>
@@ -79,19 +79,23 @@ import ContactButton from "./ContactButton.astro";
 <script>
   const btnMenu = document.getElementById("btn-menu");
   const containerMenu = document.getElementById("container-menu");
+  const buttonsOverlay = document.querySelectorAll("#menu-overlay > li > a");
+  const body = document.querySelector("body");
 
-  btnMenu?.addEventListener("click", () => {
-    btnMenu.classList.toggle("btn-menu-open");
-    if (containerMenu?.classList.contains("opacity-100")) {
-      containerMenu.classList.remove("opacity-100");
-      containerMenu.classList.remove("right-0");
-      containerMenu.classList.add("opacity-0");
-      containerMenu.classList.add("-right-full");
-    } else if (containerMenu) {
-      containerMenu.classList.remove("opacity-0");
-      containerMenu.classList.remove("-right-full");
-      containerMenu.classList.add("opacity-100");
-      containerMenu.classList.add("right-0");
+  const handdleVisibilityMenu = () => {
+    btnMenu?.classList.toggle("btn-menu-open");
+    body?.classList.toggle("menu-active");
+
+    if (containerMenu?.getAttribute("data-active")) {
+      containerMenu.removeAttribute("data-active");
+    } else {
+      containerMenu?.setAttribute("data-active", "1");
     }
+  };
+
+  btnMenu?.addEventListener("click", handdleVisibilityMenu);
+
+  buttonsOverlay.forEach((btn) => {
+    btn.addEventListener("click", handdleVisibilityMenu);
   });
 </script>

@@ -38,9 +38,14 @@ const { title, description } = Astro.props;
 		src: url(../fonts/Poppins-SemiBold.ttf);
 	}
 
+	body.menu-active {
+		overflow: hidden;
+	}
+
 	html {
 		font-family: poppins;
 		background: #13151a;
 		color: white;
+		scroll-behavior: smooth;
 	}
 </style>
