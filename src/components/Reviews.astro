@@ -1,0 +1,81 @@
+---
+import CardReview from "./CardReview.astro";
+import ContactButton from "./ContactButton.astro";
+import Chevron from "./Icons/Chevron.astro";
+
+const review = [
+  {
+    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae non libero porro nulla similique accusantium quia fuga ad quasi nobis!",
+    name: "John Doe",
+    imgSrc: "/avater-01.png",
+    company: "Acer Company",
+  },
+];
+---
+
+<div class="w-full px-4 flex flex-col justify-center items-start">
+  <section class="w-full max-w-7xl px-4 pb-4 pt-4 lg:px-8 lg:pt-24">
+    <div class="mt-4 w-full flex justify-center items-center flex-col md:mt-0">
+      <div class="splide splide-reviews">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl uppercase lg:text-4xl">
+            Lo que dicen nuetros clientes
+          </h3>
+          <div class="splide__arrows w-full flex justify-end mb-5 gap-4">
+            <button
+              class="splide__arrow splide__arrow--prev p-1 border-2 border-violet-500 hover:bg-violet-500 group transition rounded-full"
+            >
+              <Chevron
+                class="w-8 h-8 rotate-180 text-violet-500 group-hover:text-white transition"
+              />
+            </button>
+            <button
+              class="splide__arrow splide__arrow--next p-1 border-2 border-violet-500 hover:bg-violet-500 group transition rounded-full"
+            >
+              <Chevron
+                class="w-8 h-8 text-violet-500 group-hover:text-white transition"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="splide__track">
+          <ul class="splide__list">
+            {
+              review.map((item) => (
+                <CardReview
+                  imgSrc={item.imgSrc}
+                  name={item.name}
+                  text={item.text}
+                  company={item.company}
+                />
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  import Splide from "@splidejs/splide";
+
+  const splideReviews = new Splide(".splide-reviews", {
+    type: "loop",
+    perPage: 3,
+    perMove: 1,
+    width: "100%",
+    gap: "30px",
+    autoplay: false,
+    breakpoints: {
+      1200: { width: "928px", perPage: 3, gap: "10px" },
+      1023: { width: "700px", perPage: 2 },
+      767: { width: "400px", perPage: 1 },
+      426: { width: "350px", perPage: 1 },
+      376: { width: "300px", perPage: 1 },
+      321: { width: "255px", perPage: 1 },
+    },
+  });
+
+  splideReviews.mount();
+</script>

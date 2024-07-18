@@ -1,0 +1,49 @@
+---
+import Image from "astro/components/Image.astro";
+import Check from "./Icons/Check.astro";
+import About from "../images/about.png";
+---
+
+<div class="w-full px-4 flex flex-col justify-center items-start mt-24">
+  <section
+    class="transition-all w-full max-w-7xl flex flex-col px-4 justify-center items-center bg-gradient-to-br from-violet-700 pt-4 to-violet-400 rounded-2xl shadow-md gap-4 lg:h-[430px] lg:mt-10 xl:mt-32 md:flex-row md:items-end lg:px-8 lg:pt-8"
+  >
+    <div class="w-full flex flex-col gap-4 md:mb-4">
+      <h3 class="text-xl uppercase lg:text-4xl">¿Por qué elegirnos?</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+        repellat. Distinctio quam dolor possimus reiciendis tempora, labore
+        aliquam. Fuga, est.
+      </p>
+      <div class="p-4 rounded-2xl bg-white">
+        <ul class="grid gap-4">
+          <li class="flex gap-3 text-[#15141a]">
+            <Check
+              class="min-w-5 h-5 p-1 bg-violet-500 text-white rounded-full"
+            />
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat, eligendi.
+          </li>
+          <li class="flex gap-3 text-[#15141a]">
+            <Check
+              class="min-w-5 h-5 p-1 bg-violet-500 text-white rounded-full"
+            />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum voluptatibus
+            ut, quo dignissimos deserunt fugit.
+          </li>
+          <li class="flex gap-3 text-[#15141a]">
+            <Check
+              class="min-w-5 h-5 p-1 bg-violet-500 text-white rounded-full"
+            />Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <Image
+      class="w-full md:w-80 lg:w-full"
+      src={About}
+      width="490"
+      height="500"
+      alt="Fotografía mujer"
+    />
+  </section>
+</div>

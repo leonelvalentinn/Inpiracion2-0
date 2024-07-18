@@ -1,13 +1,15 @@
 ---
 interface Props {
   classList?: string;
+  bg?: string;
+  textColor?: string;
 }
 
-const { classList } = Astro.props;
+const { classList, bg, textColor } = Astro.props;
 ---
 
 <a
-  class={`inline-block w-max h-max px-5 py-2 rounded-full text-white bg-violet-600 font-light transition hover:scale-105 ${classList}`}
+  class={`inline-block w-max h-max px-5 py-2 rounded-full font-light transition hover:scale-105 ${classList} ${textColor ? textColor : "text-white"} ${bg ? bg : "bg-violet-600"}`}
   href="tel:555555555555"
   target="_blank"
   rel="noopener noreferrer"

@@ -1,0 +1,57 @@
+---
+import ContactButton from "./ContactButton.astro";
+import Check from "./Icons/Check.astro";
+
+interface Props {
+  Icon: any;
+  title: string;
+  text: string;
+  features: any;
+}
+
+const { Icon, title, text, features } = Astro.props;
+---
+
+<li
+  class="bg-[#2f2d35] p-4 rounded-2xl splide__slide w-full group transition-all max-h-72 hover:max-h-[450px] data-[active]:max-h-[450px]"
+>
+  <div class="flex flex-col gap-4 justify-between items-center relative h-full">
+    <header class="flex items-center">
+      <div class="w-max p-2 bg-[#3d3d4f] rounded-2xl shadow-md">
+        {(<Icon class="w-8" />)}
+      </div>
+      <h4
+        class="transition-all opacity-0 max-h-0 max-w-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-56 group-hover:max-w-56 group-hover:ml-6 group-[.active]:opacity-100 group-[.active]:max-h-56 group-[.active]:max-w-56 group-[.active]:ml-6"
+      >
+        {title}
+      </h4>
+    </header>
+    <p
+      class="transition-all opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-56 group-[.active]:opacity-100 group-[.active]:max-h-56"
+    >
+      {text}
+    </p>
+    <h4
+      class="w-full transition-all absolute top-1/2 text-center -translate-x-1/2 left-1/2 -translate-y-1/2 opacity-100 scale-110 overflow-hidden group-hover:opacity-0 group-hover:scale-0 group-[.active]:opacity-0 group-[.active]:scale-0"
+    >
+      {title}
+    </h4>
+    <span
+      class="transition-all opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-56 group-[.active]:opacity-100 group-[.active]:max-h-56"
+      >Comienza con</span
+    >
+    <ul
+      class="flex flex-col gap-2 transition-all opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-56 group-[.active]:opacity-100 group-[.active]:max-h-56"
+    >
+      {
+        features.map((feature: any) => (
+          <li class="flex gap-3">
+            <Check class="w-5 h-5 p-1 bg-violet-500 rounded-full" />
+            {feature}
+          </li>
+        ))
+      }
+    </ul>
+    <ContactButton bg="bg-slate-200" textColor="text-[#2f2d35]" />
+  </div>
+</li>

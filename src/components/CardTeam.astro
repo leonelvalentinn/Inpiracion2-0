@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  imgSrc: string;
+  name: string;
+  jobTitle: string;
+}
+
+const { imgSrc, name, jobTitle } = Astro.props;
+---
+
+<li class="splide__slide">
+  <Image
+    class="w-full"
+    src={imgSrc}
+    width="500"
+    height="500"
+    alt={`Fotografía de ${name}`}
+  />
+  <div class="flex flex-col justify-center items-center mt-4">
+    <span class="text-[#15141a]">{name}</span>
+    <span class="text-[#15141a]">{jobTitle}</span>
+  </div>
+</li>

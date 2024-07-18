@@ -1,0 +1,95 @@
+---
+import Chevron from "./Icons/Chevron.astro";
+import CardTeam from "./CardTeam.astro";
+
+const teammatesInfo = [
+  {
+    imgSrc: "/uriel_2.png",
+    name: "Uriel Zahuantitla",
+    jobTitle: "Diseñador",
+  },
+  {
+    imgSrc: "/uriel_2.png",
+    name: "Uriel Zahuantitla",
+    jobTitle: "Diseñador",
+  },
+  {
+    imgSrc: "/uriel_2.png",
+    name: "Uriel Zahuantitla",
+    jobTitle: "Diseñador",
+  },
+  {
+    imgSrc: "/uriel_2.png",
+    name: "Uriel Zahuantitla",
+    jobTitle: "Diseñador",
+  },
+];
+---
+
+<section
+  class="w-full justify-center items-center flex flex-col px-4 bg-slate-50 rounded-2xl pt-80 -mt-64 lg:px-10"
+>
+  <div class="w-full justify-start">
+    <span
+      class="bg-violet-500 rounded-full px-3 py-2 inline-block w-max h-max mb-5"
+      >Nuestros Equipo</span
+    >
+    <h3 class="text-xl text-[#13151a] uppercase lg:text-4xl">
+      Conoce a los que hacen posible todo
+    </h3>
+  </div>
+  <div class="mt-4 w-full flex justify-center items-center flex-col md:mt-0">
+    <div class="splide splide-team">
+      <div class="splide__arrows w-full flex justify-end mb-5 gap-4">
+        <button
+          class="splide__arrow splide__arrow--prev p-1 rounded-full transition border-2 border-violet-500 hover:bg-violet-500 group"
+        >
+          <Chevron
+            class="w-8 h-8 rotate-180 text-violet-500 group-hover:text-white"
+          />
+        </button>
+        <button
+          class="splide__arrow splide__arrow--next p-1 rounded-full transition border-2 border-violet-500 hover:bg-violet-500 group"
+        >
+          <Chevron class="w-8 h-8 text-violet-500 group-hover:text-white" />
+        </button>
+      </div>
+      <div class="splide__track">
+        <ul class="splide__list">
+          {
+            teammatesInfo.map((item) => (
+              <CardTeam
+                imgSrc={item.imgSrc}
+                jobTitle={item.jobTitle}
+                name={item.name}
+              />
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Splide from "@splidejs/splide";
+
+  const splide = new Splide(".splide-team", {
+    type: "loop",
+    perPage: 3,
+    perMove: 1,
+    width: "928px",
+    gap: "30px",
+    autoplay: false,
+    breakpoints: {
+      1200: { width: "928px", gap: "10px" },
+      1023: { width: "700px", perPage: 2 },
+      767: { width: "400px", perPage: 1 },
+      426: { width: "350px" },
+      376: { width: "300px" },
+      321: { width: "255px" },
+    },
+  });
+
+  splide.mount();
+</script>
