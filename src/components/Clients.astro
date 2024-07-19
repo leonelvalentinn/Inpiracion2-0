@@ -8,27 +8,39 @@ const clientsInfo = [
     link: "https://plaza-grill.com.mx",
     width: 80,
     height: 115,
+    classW: "w-10 md:w-14",
   },
   {
-    logo: "/logos/logo-plaza-grill.png",
-    name: "Plaza Grill",
-    link: "https://plaza-grill.com.mx",
-    width: 80,
-    height: 115,
+    logo: "/logos/hackema.png",
+    name: "Hackema",
+    link: "https://hackema.com",
+    width: 900,
+    height: 230,
+    classW: "w-20 md:w-32",
   },
   {
-    logo: "/logos/logo-plaza-grill.png",
-    name: "Plaza Grill",
-    link: "https://plaza-grill.com.mx",
-    width: 80,
-    height: 115,
+    logo: "/logos/multiservices-card.png",
+    name: "Multiservices Card",
+    link: "https://multiservicescard.com.mx",
+    width: 847,
+    height: 533,
+    classW: "w-16 md:w-24",
   },
   {
-    logo: "/logos/logo-plaza-grill.png",
-    name: "Plaza Grill",
-    link: "https://plaza-grill.com.mx",
-    width: 80,
-    height: 115,
+    logo: "/logos/olga-castillo.png",
+    name: "Dra. Olga Castillo",
+    link: "https://dracastillomaternofetal.com",
+    width: 300,
+    height: 377,
+    classW: "w-12 md:w-20",
+  },
+  {
+    logo: "/logos/vida-prenatal.webp",
+    name: "Vida Prenatal Materno Fetal",
+    link: "https://vidaprenatal-maternofetal-ginecologia.mx",
+    width: 700,
+    height: 200,
+    classW: "w-24 md:w-36",
   },
 ];
 ---
@@ -51,9 +63,15 @@ const clientsInfo = [
   >
     {
       clientsInfo.map((client) => (
-        <a href={client.link} target="_blank" rel="noopener noreferrer">
+        <a
+          href={client.link}
+          class="transition hover:scale-105"
+          target="_blank"
+          rel="noopener noreferrer"
+          title={`Ir a la página web de ${client.name}`}
+        >
           <Image
-            class="w-10 lg:w-14"
+            class={client.classW}
             src={client.logo}
             alt={`Logo de ${client.name}`}
             width={client.width}
