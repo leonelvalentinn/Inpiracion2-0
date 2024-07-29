@@ -1,6 +1,9 @@
 ---
 import Image from "astro/components/Image.astro";
-import PhoneImage from "../images/phone.jpg";
+import Olga from "../images/clients/olga.png";
+import Multiservices from "../images/clients/multiservices.png";
+import Plaza from "../images/clients/plaza.png";
+import Job from "../images/clients/multiservices-job.png";
 ---
 
 <div class="w-full px-4 flex flex-col justify-center items-start mt-24">
@@ -13,47 +16,75 @@ import PhoneImage from "../images/phone.jpg";
   >
     <div class="w-full flex flex-col md:flex-row gap-4">
       <h3 class="text-xl uppercase lg:text-4xl">
-        una muestra de nuestro trabajo con diferentes marcas
+        una muestra de nuestro trabajo
       </h3>
       <div class="flex flex-col gap-4 max-w-[500px] lg:max-w-full">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-          repellat. Distinctio quam dolor possimus reiciendis tempora, labore
-          aliquam. Fuga, est.
+          Cada campaña y estrategia que implementamos está diseñada para
+          maximizar el impacto y alcanzar los objetivos específicos de cada
+          marca.
         </p>
       </div>
     </div>
     <div
       class="grid grid-cols-2 gap-2 w-full mt-5 md:mt-10 md:max-h-[300px] md:grid-cols-4 md:grid-rows-6 md:gap-4"
     >
-      <Image
-        src={PhoneImage}
-        width="1280"
-        height="853"
-        alt="Teléfono móvil"
-        class="w-full object-cover h-full rounded-2xl md:row-span-6"
-      />
-      <Image
-        src={PhoneImage}
-        width="1280"
-        height="853"
-        alt="Teléfono móvil"
-        class="w-full object-cover h-full rounded-2xl md:row-span-4"
-      />
-      <Image
-        src={PhoneImage}
-        width="1280"
-        height="853"
-        alt="Teléfono móvil"
-        class="w-full object-cover h-full rounded-2xl md:col-span-2 md:row-span-6"
-      />
-      <Image
-        src={PhoneImage}
-        width="1280"
-        height="853"
-        alt="Teléfono móvil"
-        class="w-full object-cover h-full rounded-2xl md:row-span-2"
-      />
+      <a
+        href="https://multiservices-job.mx"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full object-cover h-full rounded-2xl transition overflow-hidden group md:row-span-6"
+      >
+        <Image
+          src={Job}
+          width="2000"
+          height="1333"
+          alt="Teléfono móvil"
+          class="w-full object-cover h-full rounded-2xl transition md:row-span-6 group-hover:scale-110"
+        /></a
+      >
+      <a
+        href="https://dracastillomaternofetal.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full object-cover h-full rounded-2xl transition overflow-hidden group md:row-span-4"
+      >
+        <Image
+          src={Olga}
+          width="1280"
+          height="853"
+          alt="Teléfono móvil"
+          class="w-full object-cover h-full rounded-2xl transition md:row-span-4 group-hover:scale-110"
+        /></a
+      >
+      <a
+        href="https://plaza-grill.com.mx"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full object-cover h-full rounded-2xl transition overflow-hidden group md:col-span-2 md:row-span-6"
+      >
+        <Image
+          src={Plaza}
+          width="2000"
+          height="1333"
+          alt="Teléfono móvil"
+          class="w-full object-cover h-full rounded-2xl transition md:col-span-2 md:row-span-6 group-hover:scale-110"
+        /></a
+      >
+      <a
+        href="https://multiservicescard.com.mx"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full object-cover h-full rounded-2xl group md:row-span-2 transition overflow-hidden"
+      >
+        <Image
+          src={Multiservices}
+          width="2000"
+          height="1333"
+          alt="Teléfono móvil"
+          class="w-full object-cover h-full rounded-2xl group-hover:scale-110 transition md:row-span-2"
+        /></a
+      >
     </div>
   </section>
 </div>

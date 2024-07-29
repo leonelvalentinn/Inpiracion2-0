@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 interface Props {
-  imgSrc: string;
+  imgSrc: any;
   name: string;
   jobTitle: string;
 }
@@ -12,7 +12,7 @@ const { imgSrc, name, jobTitle } = Astro.props;
 
 <li class="splide__slide">
   <Image
-    class="w-full"
+    class="w-full rounded-xl"
     src={imgSrc}
     width="500"
     height="500"

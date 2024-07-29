@@ -3,7 +3,7 @@ import Image from "astro/components/Image.astro";
 import ContactButton from "./ContactButton.astro";
 import googleSearch from "../images/logos/google-search.png";
 import partner from "../images/logos/partner.png";
-import heroImg from "../images/heroimg.png";
+import heroImg from "../images/hero.png";
 ---
 
 <section
@@ -11,16 +11,17 @@ import heroImg from "../images/heroimg.png";
 >
   <article class="flex flex-col gap-6">
     <h1 class="uppercase text-5xl font-[poppins-bold]">
-      Your <span
+      Tu <span
         class="text-transparent bg-gradient-to-br from-violet-800 to-violet-500 bg-clip-text"
-        >partner</span
-      > marketing success
+        >Agencia</span
+      > de Marketing Digital
     </h1>
     <ContactButton />
     <p class="text-zinc-400">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. In quaerat culpa
-      deserunt, debitis quis nisi, voluptatum quo, laborum iusto cum nobis sed
-      aperiam ducimus non doloribus nostrum corporis.
+      Nos dedicamos a ayudar a nuestros clientes a potenciar su marca y alcanzar
+      sus objetivos de negocio. Nuestro enfoque integral y personalizado nos
+      permite diseñar estrategias de marketing digital efectivas que se adaptan
+      a las necesidades específicas de cada cliente.
     </p>
     <div class="w-full flex justify-start items-center gap-5">
       <div class="w-20">
@@ -45,13 +46,16 @@ import heroImg from "../images/heroimg.png";
       </div>
     </div>
   </article>
-  <article class="w-full grid place-content-end">
+  <article
+    class="w-full grid place-content-end md:place-content-start lg:place-content-end"
+  >
     <Image
       src={heroImg}
-      width="525"
-      height="512"
+      width="980"
+      height="969"
       alt="Hero Image"
       loading="eager"
+      class="w-full max-w-lg"
     />
   </article>
 </section>

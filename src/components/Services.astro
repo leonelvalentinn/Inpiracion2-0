@@ -1,40 +1,83 @@
 ---
 import CardService from "./CardService.astro";
 import ContactButton from "./ContactButton.astro";
+import Brand from "./Icons/Brand.astro";
+import Social from "./Icons/Social.astro";
+import Google from "./Icons/Google.astro";
+import SEO from "./Icons/SEO.astro";
+import Ad from "./Icons/Ad.astro";
+import Web from "./Icons/Web.astro";
+import Info from "./Icons/Info.astro";
 import Chevron from "./Icons/Chevron.astro";
 import Data from "./Icons/Data.astro";
 import "@splidejs/splide/css/core";
 
 const servicesInfo = [
   {
-    icon: Data,
-    title: "Marketing DIgital",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, repellat. Distinctio quam dolor possimus reiciendis tempora",
-    features: ["SEO", "Google Ads", "Facebook Advertising"],
+    icon: Brand,
+    title: "Branding",
+    text: "Creación y gestionamiento de una identidad única para una marca o empresa.",
+    features: [
+      "Tipografías y colore",
+      "Manual de identidad",
+      "Desarrollo de identidad gráfica",
+    ],
   },
   {
-    icon: Data,
-    title: "Marketing DIgital",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, repellat. Distinctio quam dolor possimus reiciendis tempora",
-    features: ["SEO", "Google Ads", "Facebook Advertising"],
+    icon: Social,
+    title: "Gestión de Redes Sociales",
+    text: "Administración y optimización de plataformas sociales para aumentar la visibilidad y fidelización de clientes.",
+    features: [
+      "Administración y gestión",
+      "Creación de contenido",
+      "Análisis, reportes y métricas",
+    ],
   },
   {
-    icon: Data,
-    title: "Marketing DIgital",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, repellat. Distinctio quam dolor possimus reiciendis tempora",
-    features: ["SEO", "Google Ads", "Facebook Advertising"],
+    icon: Google,
+    title: "Publicidad en Google",
+    text: "Atraer tráfico relevante a tu sitio web y aumentar las conversiones de clientes potenciales.",
+    features: [
+      "Creación y gestión de campañas",
+      "Optimización de anuncios",
+      "Reportes y análisis de campañas",
+    ],
   },
   {
-    icon: Data,
-    title: "Marketing DIgital",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, repellat. Distinctio quam dolor possimus reiciendis tempora",
-    features: ["SEO", "Google Ads", "Facebook Advertising"],
+    icon: SEO,
+    title: "SEO",
+    text: "Estrategias para mejorar la visibilidad de un sitio web en los resultados orgánicos de motores de búsqueda.",
+    features: [
+      "Auditorías SEO y análisis de competencia",
+      "Estrategias de contenido",
+      "Estrategias Off-Page",
+    ],
   },
   {
-    icon: Data,
-    title: "Marketing DIgital",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, repellat. Distinctio quam dolor possimus reiciendis tempora",
-    features: ["SEO", "Google Ads", "Facebook Advertising"],
+    icon: Ad,
+    title: "Marketing de Contenidos",
+    text: "Creación de contenido relevante y valioso para atraer a una audiencia definida.",
+    features: [
+      "Creación de blogs, artículos y contenido visual",
+      "Estrategias de distribución y promoción de contenido",
+      "Optimización de contenido para SEO",
+    ],
+  },
+  {
+    icon: Web,
+    title: "Diseño y Desarrollo Web",
+    text: "Diseñamos y desarrollamos sitios web atractivos, funcionales y adaptables a diferentes dispositivos, optimizados para la mejor experiencia del usuario.",
+    features: ["Landing Page", "Tienda en Línea", "Página Web"],
+  },
+  {
+    icon: Info,
+    title: "Consultoría",
+    text: "Asesoría para desarrollar, implementar y optimizar estrategias de marketing digital.",
+    features: [
+      "Asesoría en marketing y transformación digital",
+      "Capacitación para equipos de marketing",
+      "Análisis y recomendaciones para mejorar el desempeño digital",
+    ],
   },
 ];
 ---
@@ -51,9 +94,10 @@ const servicesInfo = [
       <h3 class="text-xl uppercase lg:text-4xl">Ofrecemos soluciones en</h3>
       <div class="flex flex-col gap-4 max-w-[500px] lg:max-w-full">
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-          repellat. Distinctio quam dolor possimus reiciendis tempora, labore
-          aliquam. Fuga, est.
+          Potenciamos tu marca con estrategias personalizadas de SEO, redes
+          sociales, publicidad en línea, contenido y diseño web. Nuestro equipo
+          de expertos garantiza un impacto significativo. Tu éxito es nuestro
+          objetivo.
         </p>
         <ContactButton bg="bg-white" textColor="text-[#13151a]" />
       </div>

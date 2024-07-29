@@ -13,11 +13,13 @@ const { Icon, title, text, features } = Astro.props;
 ---
 
 <li
-  class="bg-[#2f2d35] p-4 rounded-2xl splide__slide w-full group transition-all max-h-72 hover:max-h-[450px] data-[active]:max-h-[450px]"
+  class="bg-[#2f2d35] p-4 rounded-2xl splide__slide w-full group transition-all max-h-72 hover:max-h-[570px] data-[active]:max-h-[570px] hover:md:max-h-[470px] data-[active]:md:max-h-[470px]"
 >
-  <div class="flex flex-col gap-4 justify-between items-center relative h-full">
-    <header class="flex items-center">
-      <div class="w-max p-2 bg-[#3d3d4f] rounded-2xl shadow-md">
+  <div
+    class="flex flex-col gap-4 justify-between items-center relative h-full transition"
+  >
+    <header class="flex items-center transition">
+      <div class="w-max p-2 bg-[#3d3d4f] rounded-2xl shadow-md transition">
         {(<Icon class="w-8" />)}
       </div>
       <h4
@@ -41,13 +43,13 @@ const { Icon, title, text, features } = Astro.props;
       >Comienza con</span
     >
     <ul
-      class="flex flex-col gap-2 transition-all opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-56 group-[.active]:opacity-100 group-[.active]:max-h-56"
+      class="flex flex-col w-full items-start gap-2 transition-all opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-56 group-[.active]:opacity-100 group-[.active]:max-h-max group-hover:md:max-h-max group-[.active]:md:max-h-56"
     >
       {
         features.map((feature: any) => (
           <li class="flex gap-3">
             <Check class="w-5 h-5 p-1 bg-violet-500 rounded-full" />
-            {feature}
+            <span class="max-w-[85%]">{feature}</span>
           </li>
         ))
       }
