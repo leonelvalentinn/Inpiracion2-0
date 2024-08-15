@@ -1,0 +1,41 @@
+---
+import Image from "astro/components/Image.astro";
+import googleSearch from "../../images/logos/google-search.png";
+import partner from "../../images/logos/partner.png";
+import heroImg from "../../images/hero-ads.png";
+import ContactButton from "../ContactButton.astro";
+---
+
+<section
+  class="w-full max-w-7xl grid grid-cols-1 place-items-center gap-10 px-4 py-10 md:grid-cols-2 lg:gap-12 lg:py-0 lg:pb-10 lg:pt-16"
+>
+  <div class="absolute w-full max-w-[500px] h-[300px] rounded-full bg-gradient-to-br opacity-40 from-[#5454D4]/40 to-[#5454D4]/20 blur-3xl top-0 -left-60 rotate-[20deg] -z-[2] md:top-24 md:h-[400px] lg:from-primaryBlue/30 lg:to-[#7835FD]/30 lg:max-w-[1200px] lg:h-[300px]"></div>
+  <article class="flex flex-col gap-6">
+    <h1 class="uppercase text-5xl font-[poppins-bold] lg:text-6xl">
+      <span
+        class="text-transparent bg-gradient-to-br from-violet-800 to-violet-500 bg-clip-text"
+        >Aumenta</span
+      > tus pacientes con Google
+    </h1>
+    <p class="text-zinc-400">
+      Nos dedicamos a ayudar a nuestros clientes a potenciar su marca y alcanzar
+      sus objetivos de negocio. Nuestro enfoque integral y personalizado nos
+      permite diseñar estrategias de marketing digital efectivas que se adaptan
+      a las necesidades específicas de cada cliente.
+    </p>
+    <ContactButton />
+    </div>
+  </article>
+  <article
+    class="w-full grid place-content-end md:place-content-start lg:place-content-end"
+  >
+    <Image
+      src={heroImg}
+      width="995"
+      height="1268"
+      alt="Hero Image"
+      loading="eager"
+      class="w-full max-w-md"
+    />
+  </article>
+</section>

@@ -1,0 +1,66 @@
+---
+import CardImportant from "../CardImportant.astro";
+import Google from '../Icons/Google.astro'
+
+const IMPORTANTPOINTS = [
+  {
+    Icon: Google,
+    title: 'Visibilidad en Google',
+    description: "Aparecer en las primeras posiciones de búsqueda asegura que los pacientes te encuentren rápidamente, aumentando tus consultas.",
+    bgColor: 'bg-yellow-500/20',
+    textColor: 'text-yellow-500'
+  },
+  {
+    Icon: Google,
+    title: 'Confianza y Credibilidad',
+    description: "Un buen posicionamiento genera confianza en los pacientes, quienes prefieren acudir a médicos que aparecen en los primeros lugares.",
+    bgColor: 'bg-violet-500/20',
+    textColor: 'text-violet-500'
+  },
+  {
+    Icon: Google,
+    title: 'Competencia Local',
+    description: "Destaca sobre otros médicos en tu área y conviértete en la opción preferida de los pacientes en tu ciudad.",
+    bgColor: 'bg-red-500/20',
+    textColor: 'text-red-500'
+  },
+  {
+    Icon: Google,
+    title: 'Crecimiento Sostenible',
+    description: "Un posicionamiento efectivo garantiza un flujo constante de nuevos pacientes, asegurando el crecimiento de tu consulta a largo plazo.",
+    bgColor: 'bg-yellow-500/20',
+    textColor: 'text-yellow-500'
+  },
+  {
+    Icon: Google,
+    title: 'Optimización de Costos',
+    description: "Invertir en SEO reduce la necesidad de pagar por publicidad constante, permitiendo un mejor uso de tu presupuesto.",
+    bgColor: 'bg-violet-500/20',
+    textColor: 'text-violet-500'
+  },
+  {
+    Icon: Google,
+    title: 'Fidelización de Pacientes',
+    description: "El posicionamiento también ayuda a retener a los pacientes actuales, fortaleciendo tu relación con ellos a través de una presencia constante en línea.",
+    bgColor: 'bg-red-500/20',
+    textColor: 'text-red-500'
+  }
+]
+---
+
+<section class="w-full flex flex-col justify-center items-center px-4 py-10">
+  <h3 class="text-center text-2xl uppercase font-[poppins-bold]">¿Por qué es importante el posicionamiento?</h3>
+  <div class="w-full max-w-7xl grid place-content-center place-items-center my-8 gap-20 md:grid-cols-2 lg:grid-cols-3">
+    {
+      IMPORTANTPOINTS.map((item) => (
+        <CardImportant
+          Icon={item.Icon}
+          title={item.title}
+          description={item.description}
+          bgColor={item.bgColor}
+          textColor={item.textColor}
+        />
+      ))
+    }
+  </div>
+</section>

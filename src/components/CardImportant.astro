@@ -1,0 +1,19 @@
+---
+interface Props {
+  Icon: any
+  title: string
+  description: string
+  bgColor: string
+  textColor: string
+}
+
+const { Icon, title, description, bgColor, textColor } = Astro.props
+---
+
+<article class="flex flex-col items-center justify-center gap-4 max-w-96">
+  <div class={`rounded-full p-4 ${bgColor}`}>
+    <Icon class={`w-6 ${textColor}`} />
+  </div>
+  <h4 class="text-center font-semibold text-xl">{title}</h4>
+  <p class="text-center text-white/70">{description}</p>
+</article>
