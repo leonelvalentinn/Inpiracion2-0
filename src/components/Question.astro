@@ -12,7 +12,7 @@ const { question, answer } = Astro.props;
   class="w-full bg-[#2f2d35] transition rounded-2xl p-4 h-full group cursor-pointer data-[show]:bg-[#383838] hover:bg-[#383838] md:w-min container-faq"
 >
   <button class="w-full flex justify-between items-center gap-3">
-    <h4>{question}</h4>
+    <h4 class="md:text-nowrap">{question}</h4>
     <Chevron
       class="w-8 transition rotate-90 group-[.show]:-rotate-90 group-[.show]:text-violet-500"
     />
