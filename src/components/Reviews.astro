@@ -2,12 +2,42 @@
 import CardReview from "./CardReview.astro";
 import Chevron from "./Icons/Chevron.astro";
 
-const review = [
+const reviews = [
   {
-    text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae non libero porro nulla similique accusantium quia fuga ad quasi nobis!",
-    name: "John Doe",
-    imgSrc: "/avater-01.png",
-    company: "Acer Company",
+    text: "Excelente servicio y resultados sorprendentes. Desde que comenzamos a trabajar con ellos, nuestras ventas han aumentado significativamente.",
+    name: "Arturo Muñoz",
+    imgSrc: "/testimonial-pictures/juarez-tarjeta.webp",
+    company: "Multiservices",
+  },
+  {
+    text: "Su equipo de marketing es altamente profesional y siempre están un paso adelante en tendencias digitales. Totalmente recomendados.",
+    name: "Jaime",
+    imgSrc: "/logos/logo-plaza-grill.png",
+    company: "Plaza Grill",
+  },
+  {
+    text: "Hicieron un gran trabajo con nuestra campaña de redes sociales. La creatividad y el enfoque estratégico fueron claves para nuestro éxito.",
+    name: "Emannuel",
+    imgSrc: "/testimonial-pictures/emannuel.jpg",
+    company: "Hackema",
+  },
+  {
+    text: "Gracias a su experiencia en SEO, nuestro sitio web ha mejorado su posición en Google, lo que ha incrementado nuestro tráfico y clientes potenciales.",
+    name: "Olga Castillo",
+    imgSrc: "/logos/olga-castillo.png",
+    company: "Dra. Olga Castillo",
+  },
+  {
+    text: "Estamos muy contentos con los resultados de nuestra campaña de email marketing. Han demostrado ser un socio estratégico para nuestro negocio.",
+    name: "Adriana",
+    imgSrc: "/testimonial-pictures/vida-prenatal.jpg",
+    company: "Vida Prenatal",
+  },
+  {
+    text: "Nos ayudaron a rediseñar nuestro sitio web y a mejorar la experiencia de usuario. Los resultados han sido excepcionales.",
+    name: "David",
+    imgSrc: "/testimonial-pictures/fit-meals.jpg",
+    company: "Fit Meals",
   },
 ];
 ---
@@ -40,7 +70,7 @@ const review = [
         <div class="splide__track">
           <ul class="splide__list">
             {
-              review.map((item) => (
+              reviews.map((item) => (
                 <CardReview
                   imgSrc={item.imgSrc}
                   name={item.name}

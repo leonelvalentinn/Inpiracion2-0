@@ -1,37 +1,36 @@
 ---
-import Image from "astro/components/Image.astro";
 import Question from "./Question.astro";
 
 const faqs = [
   {
-    question: "¿Qué servicios ofrecemos?",
+    question: "¿Qué servicios de marketing digital ofrecen?",
     answer:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+      "Ofrecemos servicios de SEO, gestión de redes sociales, publicidad paga (PPC), email marketing y diseño web, todos personalizados para tu negocio.",
   },
   {
-    question: "¿Qué servicios ofrecemos?",
+    question: "¿Cómo miden el éxito de las campañas de marketing?",
     answer:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+      "Medimos el éxito mediante métricas como el ROI, la tasa de conversión, el tráfico web y el engagement en redes sociales.",
   },
   {
-    question: "¿Qué servicios ofrecemos?",
+    question: "¿Cuánto tiempo toma ver resultados?",
     answer:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+      "Depende del servicio: SEO puede tardar de 3 a 6 meses, mientras que PPC y redes sociales suelen mostrar resultados en semanas.",
   },
   {
-    question: "¿Qué servicios ofrecemos?",
+    question: "¿Cómo personalizan las estrategias para cada negocio?",
     answer:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+      "Diseñamos cada estrategia basada en tus objetivos, público y mercado específico. No usamos soluciones genéricas.",
   },
   {
-    question: "¿Qué servicios ofrecemos?",
+    question: "¿Ofrecen paquetes o precios personalizados?",
     answer:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+      "Sí, tenemos paquetes estándar y opciones personalizadas según tus necesidades y presupuesto.",
   },
   {
-    question: "¿Qué servicios ofrecemos?",
+    question: "¿Cómo es el proceso de trabajo con su agencia?",
     answer:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus similique dolores expedita asperiores consequatur at!",
+      "Comenzamos con una consulta, seguimos con la estrategia, implementamos las campañas y luego monitoreamos y optimizamos constantemente, informándote con reportes regulares.",
   },
 ];
 ---
@@ -45,7 +44,7 @@ const faqs = [
   >
   <h3 class="text-xl uppercase mb-4 lg:text-3xl">Preguntas frecuentes</h3>
   <div
-    class="w-full max-w-2xl flex flex-wrap gap-4 justify-center items-center mt-10"
+    class="w-full max-w-6xl flex flex-wrap gap-4 justify-center items-center mt-10"
   >
     {
       faqs.map((faq) => (
