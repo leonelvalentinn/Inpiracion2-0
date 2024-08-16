@@ -1,0 +1,6 @@
+# Asegúrate de que el módulo de reescritura esté habilitado
+RewriteEngine On
+
+# Redirigir todas las solicitudes HTTP a HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
