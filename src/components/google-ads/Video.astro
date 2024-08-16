@@ -1,18 +1,25 @@
 ---
-import LiteYoutube from '../LiteYoutube.astro'
+import LiteYoutube from "../LiteYoutube.astro";
 ---
 
 <div class="w-full px-4 flex flex-col justify-center items-center py-10">
-  <div class="w-full flex flex-col justify-between mb-5 items-center gap-5 md:flex-row">
+  <div
+    class="w-full flex flex-col max-w-6xl justify-between mb-5 items-center gap-5 md:flex-row"
+  >
     <span
-      class="bg-white text-nowrap text-[#13151a] rounded-full px-3 py-2 inline-block w-max h-max "
+      class="bg-white text-nowrap text-[#13151a] rounded-full px-3 py-2 inline-block w-max h-max"
       >Nuestros Servicios</span
     >
     <p>
-      Watch this one minute video so you understand why you should use our services!
+      Watch this one minute video so you understand why you should use our
+      services!
     </p>
   </div>
   <div class="w-full max-w-5xl">
-    <LiteYoutube title='Video' videoId='guJLfqTFfIw' backgroundImage='/bg-video.webp' />
+    <LiteYoutube
+      title="Video"
+      videoId="guJLfqTFfIw"
+      backgroundImage="/bg-video.webp"
+    />
   </div>
 </div>

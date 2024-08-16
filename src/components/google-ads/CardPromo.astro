@@ -1,0 +1,26 @@
+---
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  title: string;
+  img: any;
+  alt: string;
+}
+
+const { title, img, alt } = Astro.props;
+---
+
+<article
+  class="flex flex-col gap-4 justify-center items-center group overflow-hidden max-w-96"
+>
+  <h4 class="text-center text-xl">{title}</h4>
+  <div class="p-4 rounded-xl bg-[#1E1E20] flex justify-center items-center">
+    <Image
+      class="w-full object-cover transition group-hover:scale-105"
+      src={img}
+      width="672"
+      height="506"
+      alt={alt}
+    />
+  </div>
+</article>

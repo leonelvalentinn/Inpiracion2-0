@@ -1,0 +1,44 @@
+---
+import CardPromo from "./CardPromo.astro";
+import web from "../../images/web.png";
+import ads from "../../images/ads.png";
+import design from "../../images/design.png";
+
+const PROMO = [
+  {
+    title: "Campaña",
+    img: ads,
+    alt: "Imagen del administrador de Google ADS",
+  },
+  {
+    title: "Sitio Web",
+    img: web,
+    alt: "Ejemplo de un sitio web",
+  },
+  {
+    title: "Diseño",
+    img: design,
+    alt: "Ejemplos de banner publicitarios",
+  },
+];
+---
+
+<section
+  class="w-full flex flex-col justify-center items-center gap-10 max-w-7xl py-10"
+>
+  <h3 class="text-center text-3xl uppercase font-[poppins-bold]">
+    Promocion <span
+      class="text-transparent bg-gradient-to-br from-violet-800 to-violet-500 bg-clip-text"
+      >Exclusiva</span
+    >
+  </h3>
+  <div class="w-full grid place-content-center px-4 gap-16 lg:grid-cols-3">
+    {
+      PROMO.map((item, i) => (
+        <div class={i === 1 ? "lg:mt-10" : i === 2 ? "lg:mt-20" : ""}>
+          <CardPromo title={item.title} img={item.img} alt={item.alt} />
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -6,15 +6,20 @@ import Video from "../components/google-ads/Video.astro";
 import Layout from "../layouts/Layout.astro";
 import ImportantSection from "../components/google-ads/ImportantSection.astro";
 import Reviews from "../components/Reviews.astro";
+import "@splidejs/splide/css/core";
+import Promotion from "../components/google-ads/Promotion.astro";
+import CallToAction from "../components/google-ads/CallToAction.astro";
 ---
 
 <Layout title="Google ADS - Inspiración Creativa" description="">
   <Header />
-    <main class="grid place-items-center">
-      <Hero />
-      <Video />
-      <ImportantSection />
-      <Reviews />
-    </main>
-    <Footer />
+  <main class="w-full grid place-items-center">
+    <Hero />
+    <Video />
+    <ImportantSection />
+    <Promotion />
+    <Reviews />
+    <CallToAction />
+  </main>
+  <Footer />
 </Layout>
