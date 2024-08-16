@@ -2,25 +2,29 @@
 interface Props {
 	title: string;
 	description: string;
+	url: string;
+	img?: string;
+	keywords: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, url, img, keywords } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
 		<meta name="generator" content={Astro.generator} />
 		<!-- open graph -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="" />
-		<meta property="og:image" content="" />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content={img} />
+		<meta name="keywords" content={keywords} />
 		<title>{title}</title>
 	</head>
 	<body class="w-full flex justify-center items-center flex-col">
