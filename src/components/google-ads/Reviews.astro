@@ -1,8 +1,8 @@
 ---
-import CardReview from "./CardReview.astro";
-import Chevron from "./Icons/Chevron.astro";
+import CardReview from "../CardReview.astro";
+import Chevron from "../Icons/Chevron.astro";
 
-const review = [
+const reviews = [
   {
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae non libero porro nulla similique accusantium quia fuga ad quasi nobis!",
     name: "John Doe",
@@ -15,7 +15,7 @@ const review = [
 <div class="w-full px-4 flex flex-col justify-center items-start" id="reviews">
   <section class="w-full max-w-7xl px-4 pb-4 pt-4 lg:px-8 lg:pt-24">
     <div class="mt-4 w-full flex justify-center items-center flex-col md:mt-0">
-      <div class="splide splide-reviews">
+      <div class="splide splide-review">
         <div class="flex justify-between items-center mb-4">
           <h3 class="text-xl uppercase lg:text-4xl">
             Lo que dicen nuetros clientes
@@ -40,7 +40,7 @@ const review = [
         <div class="splide__track">
           <ul class="splide__list">
             {
-              review.map((item) => (
+              reviews.map((item) => (
                 <CardReview
                   imgSrc={item.imgSrc}
                   name={item.name}
@@ -59,7 +59,7 @@ const review = [
 <script>
   import Splide from "@splidejs/splide";
 
-  const splideReviews = new Splide(".splide-reviews", {
+  const splideReview = new Splide(".splide-review", {
     type: "loop",
     perPage: 3,
     perMove: 1,
@@ -76,5 +76,5 @@ const review = [
     },
   });
 
-  splideReviews.mount();
+  splideReview.mount();
 </script>
