@@ -7,11 +7,19 @@ import Facebook from "../images/logos/facebook.png";
 import Instagram from "../images/logos/instagram.png";
 import WhatsApp from "../images/logos/whatsapp.png";
 import X from "../images/logos/x.png";
+
+interface Props {
+  theme?: string;
+}
+
+const { theme } = Astro.props;
 ---
 
-<div class="w-full px-4 flex flex-col justify-center items-center mt-10 pb-4">
+<div
+  class="w-full px-4 flex flex-col justify-center items-center mt-10 pb-4 text-white"
+>
   <section
-    class="transition-all w-full max-w-7xl flex flex-col p-4 justify-center items-center bg-gradient-to-br from-violet-700 to-violet-400 rounded-2xl shadow-md gap-4 md:flex-row md:items-end lg:px-8 lg:pt-8"
+    class={`transition-all w-full max-w-7xl flex flex-col p-4 justify-center items-center bg-gradient-to-br ${theme === "light" ? "from-blue-700 to-blue-400" : "from-violet-700 to-violet-400"} rounded-2xl shadow-md gap-4 md:flex-row md:items-end lg:px-8 lg:pt-8`}
   >
     <div
       class="w-full flex flex-col justify-center items-center gap-4 md:mb-4 md:flex-row md:justify-between"

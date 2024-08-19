@@ -2,6 +2,12 @@
 import CardReview from "./CardReview.astro";
 import Chevron from "./Icons/Chevron.astro";
 
+interface Props {
+  theme?: string;
+}
+
+const { theme } = Astro.props;
+
 const reviews = [
   {
     text: "Excelente servicio y resultados sorprendentes. Desde que comenzamos a trabajar con ellos, nuestras ventas han aumentado significativamente.",
@@ -52,17 +58,17 @@ const reviews = [
           </h3>
           <div class="splide__arrows w-full flex justify-end mb-5 gap-4">
             <button
-              class="splide__arrow splide__arrow--prev p-1 border-2 border-violet-500 hover:bg-violet-500 group transition rounded-full"
+              class={`splide__arrow splide__arrow--prev p-1 border-2 ${theme === "light" ? "border-blue-500 hover:bg-blue-500" : "border-violet-500 hover:bg-violet-500"} group transition rounded-full`}
             >
               <Chevron
-                class="w-8 h-8 rotate-180 text-violet-500 group-hover:text-white transition"
+                class={`w-8 h-8 rotate-180 ${theme === "light" ? "text-blue-500" : "text-violet-500"} group-hover:text-white transition`}
               />
             </button>
             <button
-              class="splide__arrow splide__arrow--next p-1 border-2 border-violet-500 hover:bg-violet-500 group transition rounded-full"
+              class={`splide__arrow splide__arrow--next p-1 border-2 ${theme === "light" ? "border-blue-500 hover:bg-blue-500" : "border-violet-500 hover:bg-violet-500"} group transition rounded-full`}
             >
               <Chevron
-                class="w-8 h-8 text-violet-500 group-hover:text-white transition"
+                class={`w-8 h-8 ${theme === "light" ? "text-blue-500" : "text-violet-500"} group-hover:text-white transition`}
               />
             </button>
           </div>
@@ -76,6 +82,7 @@ const reviews = [
                   name={item.name}
                   text={item.text}
                   company={item.company}
+                  theme={theme}
                 />
               ))
             }

@@ -10,10 +10,12 @@ interface Props {
 const { Icon, title, description, bgColor, textColor } = Astro.props;
 ---
 
-<article class="flex flex-col items-center justify-center gap-4 max-w-96">
+<article
+  class="flex flex-col items-center justify-center gap-4 max-w-96 transition cursor-default p-2 hover:scale-105 rounded-xl hover:bg-blue-100"
+>
   <div class={`rounded-full p-4 ${bgColor}`}>
     <Icon class={`w-6 ${textColor}`} />
   </div>
   <h4 class="text-center font-semibold text-xl">{title}</h4>
-  <p class="text-center text-white/70">{description}</p>
+  <p class="text-center text-[#13151a]/70">{description}</p>
 </article>

@@ -1,14 +1,18 @@
 ---
-import CardPromo from "./CardPromo.astro";
 import web from "../../images/web.png";
-import ads from "../../images/ads.png";
+import seo from "../../images/seo.png";
 import design from "../../images/design.png";
+import Image from "astro/components/Image.astro";
+
+import banner from "../../images/promo-1.jpeg";
+import banner2 from "../../images/promo-2.jpeg";
+import Close from "../Icons/Close.astro";
 
 const PROMO = [
   {
-    title: "Campaña",
-    img: ads,
-    alt: "Imagen del administrador de Google ADS",
+    title: "Campaña de Posicionamiento",
+    img: seo,
+    alt: "Imagen de un resultado posicionado",
   },
   {
     title: "Sitio Web",
@@ -16,7 +20,7 @@ const PROMO = [
     alt: "Ejemplo de un sitio web",
   },
   {
-    title: "Diseño",
+    title: "Diseño de Promocionales",
     img: design,
     alt: "Ejemplos de banner publicitarios",
   },
@@ -24,15 +28,58 @@ const PROMO = [
 ---
 
 <section
-  class="w-full flex flex-col justify-center items-center gap-10 max-w-7xl py-10"
+  class="w-full flex flex-col justify-center px-4 items-center gap-10 max-w-7xl py-10"
 >
-  <h3 class="text-center text-3xl uppercase font-[poppins-bold]">
-    Promocion <span
-      class="text-transparent bg-gradient-to-br from-violet-800 to-violet-500 bg-clip-text"
-      >Exclusiva</span
-    >
-  </h3>
-  <div class="w-full grid place-content-center px-4 gap-16 lg:grid-cols-3">
+  <div>
+    <h3 class="text-center text-3xl uppercase font-[poppins-bold]">
+      Promoción <span class="">Exclusiva</span>
+    </h3>
+  </div>
+  <div
+    class="flex flex-col gap-4 justify-center items-center w-full max-w-4xl md:flex-row lg:gap-16"
+    id="container-btn"
+  >
+    <button class="w-full cursor-zoom-in" title="Da click para hacer zoom">
+      <Image
+        src={banner}
+        width="1080"
+        height="1080"
+        alt="Banner de promoción"
+        class="w-full rounded-lg"
+      />
+    </button>
+    <button class="w-full cursor-zoom-in" title="Da click para hacer zoom">
+      <Image
+        src={banner2}
+        width="1080"
+        height="1080"
+        alt="Banner de promoción"
+        class="w-full rounded-lg"
+      />
+    </button>
+  </div>
+  <div
+    class="fixed inset-0 w-full h-svh bg-[#13151a]/60 z-10 flex justify-center items-center transition scale-0 data-[show]:scale-100"
+    id="container"
+  >
+    <div class="relative">
+      <button
+        id="close"
+        class="absolute -top-5 -right-5 p-2 bg-red-500 rounded-lg transition hover:scale-105"
+      >
+        <Close class="w-5 text-white" />
+      </button>
+      <Image
+        id="img"
+        src={banner}
+        width="1080"
+        height="1080"
+        alt="Banner de promoción"
+        class="w-full max-w-[500px] rounded-lg"
+      />
+    </div>
+  </div>
+  <!-- <div class="w-full grid place-content-center gap-16 lg:grid-cols-3">
     {
       PROMO.map((item, i) => (
         <div class={i === 1 ? "lg:mt-10" : i === 2 ? "lg:mt-20" : ""}>
@@ -41,4 +88,36 @@ const PROMO = [
       ))
     }
   </div>
+  <div>
+    <p>
+      Inluye <span>$2,000</span> de inversión mensual para publicidad en Google ADS.
+      <br />
+      Sitio web (Landing Page) con hosting y dominio. En caso de ya contar con una
+      se realizará una landing exclusiva para campañas.
+      <br />
+      Configuración en Google Bussiness y vinculación a Google Analytics.
+    </p>
+  </div> -->
 </section>
+
+<script>
+  const buttons = document.querySelectorAll("#container-btn button");
+  const img = document.getElementById("img");
+  const container = document.getElementById("container");
+  const closeBtn = document.getElementById("close");
+
+  buttons.forEach((btn, i) =>
+    btn.addEventListener("click", () => {
+      container?.setAttribute("data-show", "1");
+      if (i === 0) {
+        img?.setAttribute("src", "/promo-1.jpeg");
+      } else if (i === 1) {
+        img?.setAttribute("src", "/promo-2.jpeg");
+      }
+    }),
+  );
+
+  closeBtn?.addEventListener("click", () => {
+    container?.removeAttribute("data-show");
+  });
+</script>

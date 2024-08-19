@@ -1,14 +1,21 @@
 ---
 import Image from "astro/components/Image.astro";
 import Logo from "../images/logos/logo.png";
+import LogoDark from "../images/logos/logo-blue.png";
 import ContactButton from "./ContactButton.astro";
+
+interface Props {
+  theme?: string;
+}
+
+const { theme } = Astro.props;
 ---
 
 <header class="w-full max-w-[1400px] flex justify-center items-center p-4">
   <nav class="w-full flex justify-between items-center">
     <a class="w-44 md:w-52" href="/">
       <Image
-        src={Logo}
+        src={theme === "dark" ? Logo : LogoDark}
         width="1080"
         height="164"
         alt="Logo de Inspiración Creativa"
@@ -37,24 +44,36 @@ import ContactButton from "./ContactButton.astro";
         </li>
       </ul>
     </div>
-    <ContactButton classList="hidden lg:block" />
+    <ContactButton
+      classList="hidden lg:block"
+      bg={theme === "light" ? "bg-blue-500" : ""}
+    />
     <button
       aria-label="Abrir menu"
       class="grid place-content-center gap-2 lg:hidden"
       id="btn-menu"
     >
-      <div class="w-8 h-1 rounded-md bg-white transition"></div>
-      <div class="w-8 h-1 rounded-md bg-white transition"></div>
-      <div class="w-8 h-1 rounded-md bg-white transition"></div>
+      <div
+        class={`w-8 h-1 rounded-md ${theme === "light" ? "bg-blue-600" : "bg-white"} transition`}
+      >
+      </div>
+      <div
+        class={`w-8 h-1 rounded-md ${theme === "light" ? "bg-blue-600" : "bg-white"} transition`}
+      >
+      </div>
+      <div
+        class={`w-8 h-1 rounded-md ${theme === "light" ? "bg-blue-600" : "bg-white"} transition`}
+      >
+      </div>
     </button>
   </nav>
 </header>
 
 <div
-  class="w-full fixed h-[calc(100svh-80px)] top-[80px] flex justify-center items-center flex-col bg-gray-900/95 opacity-0 -right-full transition z-10 data-[active]:opacity-100 data-[active]:right-0"
+  class={`w-full fixed h-[calc(100svh-80px)] top-[80px] flex justify-center items-center flex-col ${theme === "light" ? "bg-blue-900/95" : "bg-gray-900/95"} opacity-0 -right-full transition z-10 data-[active]:opacity-100 data-[active]:right-0`}
   id="container-menu"
 >
-  <div class="">
+  <div class={theme === "light" ? "text-white" : ""}>
     <ul class="grid gap-4" id="menu-overlay">
       <li><a href="/#about">Nosotros</a></li>
       <li><a href="/#services">Servicios</a></li>
@@ -62,7 +81,7 @@ import ContactButton from "./ContactButton.astro";
       <li><a href="#reviews">Testimonios</a></li>
     </ul>
   </div>
-  <ContactButton classList="mt-6" />
+  <ContactButton classList="mt-6" bg={theme === "light" ? "bg-blue-600" : ""} />
 </div>
 
 <style>

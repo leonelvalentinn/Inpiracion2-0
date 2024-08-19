@@ -5,13 +5,19 @@ interface Props {
 	url: string;
 	img?: string;
 	keywords: string;
+	theme?: string;
 }
 
-const { title, description, url, img, keywords } = Astro.props;
+const { title, description, url, img, keywords, theme } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html
+	lang="es"
+	class={theme === "dark"
+		? "bg-[#13151a] text-white"
+		: "text-[#13151a] bg-white"}
+>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -48,8 +54,6 @@ const { title, description, url, img, keywords } = Astro.props;
 
 	html {
 		font-family: poppins, system-ui;
-		background: #13151a;
-		color: white;
 		scroll-behavior: smooth;
 	}
 </style>

@@ -2,10 +2,21 @@
 import Image from "astro/components/Image.astro";
 import heroImg from "../../images/hero-ads.png";
 import ContactButton from "../ContactButton.astro";
+import LogoAds from "../../images/logos/logo-google-ads.png";
 ---
 
+<div class="px-4 flex flex-col justify-center items-center">
+  <h2 class="text-2xl mb-1 text-center lg:text-3xl">Posiciona tu clínica en</h2>
+  <Image
+    class="w-full max-w-80"
+    src={LogoAds}
+    width="1243"
+    height="221"
+    alt="Logo de Google ADS"
+  />
+</div>
 <section
-  class="w-full max-w-7xl grid grid-cols-1 place-items-center gap-10 px-4 py-10 md:grid-cols-2 lg:gap-12 lg:py-0 lg:pb-10 lg:pt-10"
+  class="w-full max-w-7xl grid grid-cols-1 place-items-center gap-10 px-4 py-8 md:grid-cols-2 lg:gap-12 lg:py-0 lg:pb-10 lg:pt-5"
 >
   <div
     class="absolute w-full max-w-[500px] h-[300px] rounded-full bg-gradient-to-br opacity-40 from-[#5454D4]/40 to-[#5454D4]/20 blur-3xl top-0 -left-60 rotate-[20deg] -z-[2] md:top-24 md:h-[400px] lg:from-primaryBlue/30 lg:to-[#7835FD]/30 lg:max-w-[1200px] lg:h-[300px]"
@@ -14,52 +25,46 @@ import ContactButton from "../ContactButton.astro";
   <article class="flex flex-col gap-6">
     <div class="hero">
       <div
-        class="w-full grid place-items-end relative h-[250px] xxs:h-[180px] lg:h-[320px] xl:h-[250px]"
+        class="w-full grid place-items-end relative h-[220px] xxs:h-[180px] lg:h-[260px] xl:h-[235px]"
       >
         <h1
           class="uppercase text-3xl font-[poppins-bold] absolute w-full opacity-0 translate-y-full title duration-500 transition lg:text-5xl"
         >
-          <span
-            class="text-transparent bg-gradient-to-br from-violet-800 to-violet-500 bg-clip-text"
-            >Tu Clínica Médica en la Cima:</span
-          > Descubre Cómo Google Ads Puede Transformar Tu Negocio
+          <span class="">Tu Clínica Médica en la Cima:</span> Descubre Cómo Transformar
+          Tu Negocio
         </h1>
         <h1
           class="uppercase text-3xl font-[poppins-bold] absolute w-full opacity-0 translate-y-full title duration-500 transition lg:text-5xl"
         >
-          <span
-            class="text-transparent bg-gradient-to-br from-violet-800 to-violet-500 bg-clip-text"
-            >Captura a Tus Pacientes en el Momento Crítico:</span
-          > La Clave Está en Google Ads
+          <span class="">Captura a Tus Pacientes en el Momento Crítico:</span> La
+          Clave Está en Google Ads
         </h1>
         <h1
           class="uppercase text-3xl font-[poppins-bold] absolute w-full opacity-0 translate-y-full title duration-500 transition lg:text-5xl"
         >
-          <span
-            class="text-transparent bg-gradient-to-br from-violet-800 to-violet-500 bg-clip-text"
-            >Transforma Búsquedas en Citas Médicas:</span
-          > El Poder de Google Ads para Tu Clínica
+          <span class="">Transforma Búsquedas en Citas Médicas:</span> El Poder de
+          Google Ads
         </h1>
       </div>
     </div>
-    <p class="text-zinc-400">
+    <p class="text-[#13151a]/80">
       Los pacientes de hoy confían en Google para encontrar sus servicios
       médicos. ¿Tu clínica aparece en la cima? Google Ads asegura que estés
       presente cuando tus futuros pacientes más lo necesitan, convirtiendo
       búsquedas en citas y clics en confianza.
     </p>
-    <ContactButton />
+    <ContactButton bg="bg-blue-600" />
   </article>
   <article
     class="w-full grid place-content-end md:place-content-start lg:place-content-end"
   >
     <Image
       src={heroImg}
-      width="1217"
-      height="1432"
+      width="1178"
+      height="1271"
       alt="Hero Image"
       loading="eager"
-      class="w-full max-w-[480px]"
+      class="w-full max-w-[480px] drop-shadow-2xl"
     />
   </article>
 </section>
@@ -113,6 +118,6 @@ import ContactButton from "../ContactButton.astro";
 
     titles[currentIndex].classList.add("active");
 
-    setInterval(showNextTitle, 3000);
+    setInterval(showNextTitle, 4000);
   });
 </script>
