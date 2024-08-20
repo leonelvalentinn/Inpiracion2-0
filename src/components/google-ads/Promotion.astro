@@ -1,30 +1,9 @@
 ---
-import web from "../../images/web.png";
-import seo from "../../images/seo.png";
-import design from "../../images/design.png";
 import Image from "astro/components/Image.astro";
 
-import banner from "../../images/promo-1.jpeg";
-import banner2 from "../../images/promo-2.jpeg";
+import banner from "../../images/promo-1.jpg";
+import banner2 from "../../images/promo-2.jpg";
 import Close from "../Icons/Close.astro";
-
-const PROMO = [
-  {
-    title: "Campaña de Posicionamiento",
-    img: seo,
-    alt: "Imagen de un resultado posicionado",
-  },
-  {
-    title: "Sitio Web",
-    img: web,
-    alt: "Ejemplo de un sitio web",
-  },
-  {
-    title: "Diseño de Promocionales",
-    img: design,
-    alt: "Ejemplos de banner publicitarios",
-  },
-];
 ---
 
 <section
@@ -66,6 +45,7 @@ const PROMO = [
       <button
         id="close"
         class="absolute -top-5 -right-5 p-2 bg-red-500 rounded-lg transition hover:scale-105"
+        aria-label="cerrar modal"
       >
         <Close class="w-5 text-white" />
       </button>
@@ -110,9 +90,9 @@ const PROMO = [
     btn.addEventListener("click", () => {
       container?.setAttribute("data-show", "1");
       if (i === 0) {
-        img?.setAttribute("src", "/promo-1.jpeg");
+        img?.setAttribute("src", "/promo-1.webp");
       } else if (i === 1) {
-        img?.setAttribute("src", "/promo-2.jpeg");
+        img?.setAttribute("src", "/promo-2.webp");
       }
     }),
   );
